@@ -1,0 +1,25 @@
+api_platform:
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    title: MetraBit Management System
+    version: v0.0.1
+    collection:
+        pagination:
+            client_items_per_page: true
+            client_enabled: true
+    exception_to_status:
+        # The 4 following handlers are registered by default, keep those lines to prevent unexpected side effects
+        Symfony\Component\Serializer\Exception\ExceptionInterface: 400 # Use a raw status code (recommended)
+        ApiPlatform\Core\Exception\InvalidArgumentException: 'HTTP_BAD_REQUEST' # Or a `Symfony\Component\HttpFoundation\Response`'s constant
+        ApiPlatform\Core\Exception\FilterValidationException: 400
+        Doctrine\ORM\OptimisticLockException: 409
+
+    patch_formats:
+        json: ['application/merge-patch+json']
+
+    swagger:
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
+        versions: [3]

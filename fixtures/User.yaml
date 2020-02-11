@@ -1,0 +1,4 @@
+App\Entity\User:
+  user_{1..20}:
+    email: '<email()>'
+    password: '<{app.alice.parameters.password_hash}>'

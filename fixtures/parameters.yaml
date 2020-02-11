@@ -1,0 +1,2 @@
+parameters:
+  app.alice.parameters.password_hash: '$2y$13$PfGpUtMQsSflZQiHtTSR5uFvJRP2brmSg7CnKebp1nMkP8/R2zgDO'
